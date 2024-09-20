@@ -34,8 +34,6 @@ Segue modelo de layout da fábrica
 
 ![image](https://github.com/user-attachments/assets/205f0c65-190e-42b4-bb97-e5d067c8720e) 
 
-![image](https://github.com/user-attachments/assets/00c7cb4d-0435-4fa9-ba9a-b82f475a0136)
-
 
 
 
