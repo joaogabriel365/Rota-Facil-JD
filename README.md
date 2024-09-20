@@ -4,16 +4,18 @@
 # Objetivos Príncipais e Específicos
 
 Objetivo geral:
-O projeto Rota Fácil JD tem como objetivo aprimorar a comunicação e a gestão de tráfego nas instalações industriais da John Deere. Após uma análise cuidadosa das necessidades e desafios da empresa, identificamos a necessidade de desenvolver um site dedicado para esse fim, visando aumentar a produtividade e a organização nas instalações. Nossos principais usuários serão os motoristas dos rebocadores, juntamente com a linha de produção nas solicitações de carrinhos.
-O desenvolvimento da aplicação web será através da plataforma de criação de sites wordpress. Através do protocolo MQTT será realizada a transferência de dados entre dispositivos IoT e servidores web. Entre os IoT’s será utilizado uma célula de carga para verificar se o carrinho está cheio ou vazio e o módulo wifi do ESP32 se conectará a vários roteadores, desse modo obtendo a geolocalização por meio de triangulação. O microcontrolador ESP 32 será usado para coletar dados de geolocalização e peso, aliado a célula de carga. 
-A escolha do WordPress se dá pela sua facilidade de uso, flexibilidade, suporte da comunidade, por ser gratuito e de código aberto. Enquanto isso, o ESP32, com conexão a roteadores e sinal Wi-Fi, oferece uma solução de geolocalização com excelente custo-benefício e alcance de sinal suficiente, isso comparado a outras alternativas disponíveis.
+O projeto Rota Fácil JD tem como objetivo otimizar a comunicação e a gestão do tráfego nas instalações industriais da John Deere. Após uma análise detalhada das necessidades e desafios da empresa, identificou-se a importância de desenvolver uma aplicação web dedicada para esse fim, visando melhorar a produtividade e a organização no fluxo de trabalho. Os principais usuários serão os motoristas de rebocadores e a linha de produção, que solicitarão carrinhos de transporte.
+
+A aplicação será desenvolvida em HTML e JavaScript, utilizando o editor Sublime. A troca de dados entre dispositivos IoT e servidores web será realizada por meio do protocolo MQTT, enquanto o módulo Wi-Fi do ESP32 se conectará a múltiplos roteadores para obter geolocalização via triangulação. O microcontrolador ESP32 será responsável pela coleta dos dados de localização.
+
+Optou-se pelo desenvolvimento em HTML e JavaScript devido à sua facilidade de uso, flexibilidade, ser gratuito e de código aberto. Já o ESP32, com conexão Wi-Fi, apresenta uma solução de geolocalização com excelente custo-benefício e alcance de sinal, sendo uma alternativa competitiva em relação a outras opções disponíveis no mercado.
+
 Objetivo específico e metas:
 Buscando alcançar os pontos esclarecidos até aqui, segue metas que o projeto Rota Fácil JD visa alcançar com a implementação do sistema:
 
-
-Gestão otimizada de tráfego: Coordenar o tráfego de carrinhos e rebocadores para melhorar a eficiência.
-Aumento da produtividade: Permitir que os motoristas tomem rotas e decisões mais eficientes e evitar que carrinhos fiquem ociosos.
-Maximizar a eficiência da comunicação: Integrar pedidos, da linha de produção, ao software para prevenir falhas e aperfeiçoar a comunicação.Materiais de Metodologia a Utilizar
+1- Gestão otimizada de tráfego: Coordenar o tráfego de carrinhos e rebocadores para melhorar a eficiência.
+2- Aumento da produtividade: Permitir que os motoristas tomem rotas e decisões mais eficientes e evitar que carrinhos fiquem ociosos.
+3- Maximizar a eficiência da comunicação: Integrar pedidos, da linha de produção, ao software para prevenir falhas e aperfeiçoar a comunicação.Materiais de Metodologia a Utilizar
 
 
 ## Layout mobile
