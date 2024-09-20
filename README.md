@@ -28,7 +28,9 @@ A ausência de um sistema integrado e automatizado torna a comunicação entre o
 
 O projeto "Rota Fácil JD" busca solucionar essa dor criando uma plataforma dedicada que permitirá uma melhor gestão do tráfego e da comunicação entre os envolvidos, garantindo mais eficiência, organização e produtividade nas operações internas da empresa.
 
-![image](https://github.com/user-attachments/assets/205f0c65-190e-42b4-bb97-e5d067c8720e)
+![image](https://github.com/user-attachments/assets/205f0c65-190e-42b4-bb97-e5d067c8720e)  Layout da Fábrica
+
+
 
 
 
