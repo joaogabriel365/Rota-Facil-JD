@@ -19,7 +19,5 @@ Buscando alcançar os pontos esclarecidos até aqui, segue metas que o projeto R
 
 3- Maximizar a eficiência da comunicação: Integrar pedidos, da linha de produção, ao software para prevenir falhas e aperfeiçoar a comunicação.Materiais de Metodologia a Utilizar
 
-![image](https://github.com/user-attachments/assets/d4b3477f-ca96-458d-a475-76241f4ae02c)
-
 
 
