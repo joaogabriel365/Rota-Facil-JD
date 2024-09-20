@@ -1,7 +1,7 @@
-# Objetivos Principais e Específicos
+# Introdução
 [![NPM](https://img.shields.io/npm/l/react)]([https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE](https://github.com/joaogabriel365/Rota-Facil-JD/blob/main/LICENSE)) 
 
-# Sobre o projeto
+# Objetivos Príncipais e Específicos
 
 https://wmazoni-sds1.netlify.app
 
