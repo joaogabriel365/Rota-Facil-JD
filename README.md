@@ -45,6 +45,9 @@ Nosso grupo desenvolveu o ROTA FÁCIL JD, um sistema personalizado que visa otim
 
 Esse sistema de gestão de tráfego integrará a coleta de dados em tempo real, como localização, a uma interface web intuitiva. Com isso, será possível gerenciar de forma eficiente os carrinhos e rebocadores nas instalações da John Deere, aumentando a produtividade e melhorando a organização logística. Os principais beneficiários dessa solução são os motoristas dos rebocadores e os agentes da linha de produção.
 
+Segue abaixo um video demonstrativo do site desenvolvido:
+
+
 [https://github.com/user-attachments/assets/770adffe-7655-420d-8670-bfd220f3f076](https://github.com/user-attachments/assets/d2f5d585-6a0e-4b64-a517-592f3ca6db43
 )
 
