@@ -39,7 +39,7 @@ O projeto "Rota Fácil JD" busca solucionar essa dor criando uma plataforma dedi
 
  
 # Resultados:
-## O que nossa aplicação está devolvendo:
+### O que nossa aplicação está devolvendo:
 
 Nosso grupo desenvolveu o ROTA FÁCIL JD, um sistema personalizado que visa otimizar a produtividade e a logística interna dentro das instalações da John Deere.
 
