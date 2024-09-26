@@ -35,6 +35,7 @@ O projeto "Rota Fácil JD" busca solucionar essa dor criando uma plataforma dedi
 ![image](https://github.com/user-attachments/assets/ec91b8e0-685e-4ed3-aa3a-9cd6bbe87ea7)
 
 # Desenvolvimento:
+**** arquitetura do projeto:
 ![image](https://github.com/user-attachments/assets/1d3de007-44ad-4766-8000-a21e2defe62a)
 
  
