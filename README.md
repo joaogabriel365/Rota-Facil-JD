@@ -36,7 +36,7 @@ O projeto "Rota Fácil JD" busca solucionar essa dor criando uma plataforma dedi
 
 # Desenvolvimento:
 
-![image](https://github.com/user-attachments/assets/1d3de007-44ad-4766-8000-a21e2defe62a)
+
 
    O desenvolvimento começa com a configuração do ESP-32, um microcontrolador com conectividade Wi-Fi. Os sensores Wi-Fi capturam o RSSI de pelo menos três roteadores, permitindo estimar a distância em metros. Com essas distâncias, o sistema calcula a localização dos objetos por meio da triangulação, transformando os dados em coordenadas de latitude e longitude.
 Essas coordenadas são enviadas a um broker via protocolo MQTT, que é eficiente para aplicações de Internet das Coisas (IoT). Esse broker recebe as informações, para que os dados seja armazenados e processados no NodeRed. O fluxo implementado nesse software permite que esses dados sejam processados para uma API. O site do projeto utiliza essa API para coletar as informações e exibi-las em um mapa interativo, permitindo que os usuários vejam a localização dos carrinhos e rebocadores em tempo real.
