@@ -16,7 +16,7 @@
 
         header {
             background-color: white;
-            border-bottom: 8px solid #E9D711; /* Borda amarela para separar o menu da home */
+            border-bottom: 8px solid #E9D711;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -29,23 +29,22 @@
         }
 
         .logo-title-container img {
-            height: 120px; /* Tamanho da imagem no menu */
-            margin-right: 0px; /* Espaço entre a imagem e o título */
-            margin-left: 220px; /* Mover a imagem ligeiramente para a direita */
+            height: 120px;
+            margin-right: 0px;
+            margin-left: 220px;
         }
 
         .logo-title-container h1 {
-            font-size: 24px; /* Tamanho do título "Rota Fácil JD" */
+            font-size: 24px;
             margin: 0;
-            color: #397b29; /* Mudança de cor do título para verde */
-            margin-left: 0px; /* Movendo o título um pouco para a direita */
+            color: #397b29;
+            margin-left: 0px;
         }
 
-        /* Estilo do seletor de idioma */
         .language-selector {
             position: relative;
             display: inline-block;
-            margin-right: 100px; /* Mover o seletor de idiomas um pouco para a esquerda */
+            margin-right: 100px;
         }
 
         .language-btn {
@@ -95,51 +94,59 @@
             display: block;
         }
 
-        .map-container {
+        /* Estilo do mapa e marcador */
+        #map-container {
+            position: relative;
             text-align: center;
             padding: 20px;
         }
 
-        .map {
-            width: 60%; /* Diminuir o tamanho do mapa central */
+        #map-image {
+            width: 60%;
             border: 10px solid #000;
-            margin: 0 auto;
-            margin-left: 5px; /* Mover a imagem do mapa ligeiramente para a direita */
+        }
+
+        #marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
         }
 
         .footer {
             background-color: #E9D711;
             padding: 20px;
             display: flex;
-            justify-content: center; /* Centraliza os elementos do rodapé */
-            align-items: center; /* Alinha verticalmente */
-            gap: 800px; /* Espaçamento entre os dois lados do rodapé */
+            justify-content: center;
+            align-items: center;
+            gap: 800px;
         }
 
         .footer-left {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza o conteúdo do lado esquerdo */
-            margin-left: 20px; /* Para aproximar mais ao centro, ajuste a margem conforme necessário */
+            align-items: center;
+            margin-left: 20px;
         }
 
         .footer-left img {
-            height: 140px; /* Tamanho da imagem no rodapé */
+            height: 140px;
         }
 
         .footer-left p, .footer-left a {
-            font-size: 16px; /* Definir o tamanho da fonte para 16px */
-            font-style: italic; /* Deixar o texto em itálico */
-            font-weight: bold; /* Negrito no texto */
-            color: green; /* Deixar o texto verde */
+            font-size: 16px;
+            font-style: italic;
+            font-weight: bold;
+            color: green;
             margin: 5px 0;
         }
 
         .footer-right {
-            text-align: center; /* Centraliza o texto à direita */
+            text-align: center;
             font-style: italic;
             color: green;
-            font-weight: bold; /* Negrito no texto */
+            font-weight: bold;
         }
 
         .footer-right p {
@@ -147,10 +154,10 @@
         }
 
         .footer a {
-            color: green; /* Deixar os links verdes */
+            color: green;
             text-decoration: none;
             font-style: italic;
-            font-weight: bold; /* Negrito nos links */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -158,7 +165,7 @@
 
     <header>
         <div class="logo-title-container">
-            <img src="https://cdn.discordapp.com/attachments/740174834927140925/1273053043151343657/2000-JD-removebg-preview.png?ex=66e56c49&is=66e41ac9&hm=480c49bbfb1a3648674405138927b598b11bbf75432af0d6a98939d56cb5aff7&" alt="John Deere Logo">
+            <img src="https://cdn.discordapp.com/attachments/740174834927140925/1273053043151343657/2000-JD-removebg-preview.png?ex=66f3ecc9&is=66f29b49&hm=b11a408aaf0286b46088df2ce38908490d9cec5d5ac87942639cddad9254cf04&" alt="John Deere Logo">
             <h1 id="title">Rota Fácil JD</h1>
         </div>
         <div class="language-selector">
@@ -177,20 +184,21 @@
         </div>
     </header>
 
-    <div class="map-container">
-        <img class="map" src="https://cdn.discordapp.com/attachments/1234630369744261204/1284288177598763078/image.png?ex=66e61612&is=66e4c492&hm=ee3b7113a331381c5426cc9aeb89b385362b2a5cbb7ab405da72ace33b8923ab&" alt="Rota Fácil JD Map">
+    <div id="map-container">
+        <img id="map-image" src="https://cdn.discordapp.com/attachments/740174834927140925/1288225447229788191/image.png?ex=66f468f0&is=66f31770&hm=03c1c65164176e54c5e9f8a3d5a2a17cc0538049ff0a31111b3b0624d2bd6451&" alt="Rota Fácil JD Map">
+        <div id="marker"></div>
     </div>
 
     <div class="footer">
         <div class="footer-left">
-            <img src="https://cdn.discordapp.com/attachments/740174834927140925/1273053043151343657/2000-JD-removebg-preview.png?ex=66e56c49&is=66e41ac9&hm=480c49bbfb1a3648674405138927b598b11bbf75432af0d6a98939d56cb5aff7&" alt="John Deere Logo">
+            <img src="https://cdn.discordapp.com/attachments/740174834927140925/1273053043151343657/2000-JD-removebg-preview.png?ex=66f3ecc9&is=66f29b49&hm=b11a408aaf0286b46088df2ce38908490d9cec5d5ac87942639cddad9254cf04&" alt="John Deere Logo">
             <p id="footer-text">© 2024 John Deere. Uso interno somente.</p>
             <p><a id="privacy" href="#">Política de Privacidade</a> | <a id="terms" href="#">Termos de Uso</a></p>
         </div>
         <div class="footer-right">
             <br>
             <br>
-            <img src="https://cdn.discordapp.com/attachments/740174834927140925/1284296226724122674/image.png?ex=66e61d91&is=66e4cc11&hm=12432fbc7b3a36487feb8c76956b21073cd581b2958eb6f94ad74f5ae0b50bd8&" alt="GOAT">
+            <img src="https://cdn.discordapp.com/attachments/740174834927140925/1276714682132070452/image.png?ex=66f40ff4&is=66f2be74&hm=24c0b6fd99eaacb4b2d0e9d610359ad759125aac02b2707b42794e6ebb8569c9&" alt="GOAT">
             <br>
             <br>
             <br>
@@ -227,10 +235,10 @@
             },
             de: {
                 title: "Einfache Route JD",
-                footerText: "© 2024 John Deere. Nur für internen Gebrauch.",
-                privacy: "Datenschutzrichtlinie",
+                footerText: "© 2024 John Deere. Nur für den internen Gebrauch.",
+                privacy: "Datenschutzbestimmungen",
                 terms: "Nutzungsbedingungen",
-                project: "Einfaches Route JD Projekt",
+                project: "Einfache Route JD Projekt",
                 developed: "Entwickelt von: Team GOAT"
             },
             es: {
@@ -243,29 +251,41 @@
             }
         };
 
-        function changeLanguage(lang) {
-            document.getElementById('title').innerText = translations[lang].title;
-            document.getElementById('footer-text').innerText = translations[lang].footerText;
-            document.getElementById('privacy').innerText = translations[lang].privacy;
-            document.getElementById('terms').innerText = translations[lang].terms;
-            document.getElementById('project').innerText = translations[lang].project;
-            document.getElementById('developed').innerText = translations[lang].developed;
-
-            const langBtn = document.getElementById('current-lang');
-            const flagImg = document.getElementById('current-flag');
-
-            const flags = {
-                pt: "https://cdn.countryflags.com/thumbs/brazil/flag-400.png",
-                en: "https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png",
-                fr: "https://cdn.countryflags.com/thumbs/france/flag-400.png",
-                de: "https://cdn.countryflags.com/thumbs/germany/flag-400.png",
-                es: "https://cdn.countryflags.com/thumbs/spain/flag-400.png"
-            };
-
-            flagImg.src = flags[lang];
-            langBtn.innerText = lang.toUpperCase();
+        function changeLanguage(language) {
+            const langData = translations[language];
+            document.getElementById('title').textContent = langData.title;
+            document.getElementById('footer-text').textContent = langData.footerText;
+            document.getElementById('privacy').textContent = langData.privacy;
+            document.getElementById('terms').textContent = langData.terms;
+            document.getElementById('project').textContent = langData.project;
+            document.getElementById('developed').textContent = langData.developed;
+            const flagUrl = document.querySelector(`li[onclick="changeLanguage('${language}')"] img`).src;
+            document.getElementById('current-flag').src = flagUrl;
+            document.getElementById('current-lang').textContent = language.toUpperCase();
         }
-    </script>
 
+        const marker = document.getElementById('marker');
+        const mapImage = document.getElementById('map-image');
+
+        function updateMarkerPosition(x, y) {
+            const max_x = 300;
+            const max_y = 300;
+            const markerLeft = (x / max_x) * mapImage.clientWidth;
+            const markerTop = (y / max_y) * mapImage.clientHeight;
+
+            marker.style.left = markerLeft + 'px';
+            marker.style.top = markerTop + 'px';
+        }
+
+        function fetchPosition() {
+            fetch('/api/cart-position')
+                .then(response => response.json())
+                .then(data => {
+                    updateMarkerPosition(data.x, data.y);
+                });
+        }
+
+        setInterval(fetchPosition, 5000);
+    </script>
 </body>
 </html>
