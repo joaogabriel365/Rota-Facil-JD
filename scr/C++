@@ -1,1 +1,169 @@
+#include <WiFi.h>
+#include <PubSubClient.h>  // Biblioteca para MQTT
 
+// Credenciais do WiFi
+const char* ssid = "Rocokoz";
+const char* password = "familia06";
+
+// Configurações do MQTT
+const char* mqttServer = "10.0.0.132";  // IP do broker MQTT
+const int mqttPort = 1883;                       // Porta do broker MQTT
+const char* topic = "carrinho/posicao";          // Tópico para publicar as informações
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+// Coordenadas dos roteadores (quadrado de 10x10 metros)
+float x1 = 0.0, y_1 = 0.0;    // Canto inferior esquerdo (Roteador 1)
+float x2 = 10.0, y_2 = 0.0;   // Canto inferior direito (Roteador 2)
+float x3 = 0.0, y_3 = 10.0;   // Canto superior esquerdo (Roteador 3)
+float x4 = 10.0, y_4 = 10.0;  // Canto superior direito (Roteador 4)
+
+// Número de leituras para a média móvel
+const int smoothingFactor = 10;
+int rssiBuffer1[smoothingFactor] = {0};
+int rssiBuffer2[smoothingFactor] = {0};
+int rssiBuffer3[smoothingFactor] = {0};
+int rssiBuffer4[smoothingFactor] = {0}; // Para o quarto roteador
+int bufferIndex = 0;
+
+// Função que converte o RSSI (intensidade do sinal) em uma estimativa de distância
+float calcDistance(int rssi) {
+    int txPower = -59; 
+    if (rssi == 0) {
+        return -1.0;
+    }
+    float ratio = rssi * 1.0 / txPower;
+    if (ratio < 1.0) {
+        return pow(ratio, 10);
+    } else {
+        float distance =  (0.89976) * pow(ratio, 7.7095) + 0.111;
+        return distance;
+    }
+}
+
+// Função que realiza a trilateração para calcular a posição (x, y) do carrinho
+void trilateration(float d1, float d2, float d3, float d4) {
+    float A = 2 * x2 - 2 * x1;
+    float B = 2 * y_2 - 2 * y_1;
+    float C = d1 * d1 - d2 * d2 - x1 * x1 - y_1 * y_1 + x2 * x2 + y_2 * y_2;
+    float D = 2 * x3 - 2 * x2;
+    float E = 2 * y_3 - 2 * y_2;
+    float F = d2 * d2 - d3 * d3 - x2 * x2 - y_2 * y_2 + x3 * x3 + y_3 * y_3;
+    float G = 2 * x4 - 2 * x3;
+    float H = 2 * y_4 - 2 * y_3;
+    float I = d3 * d3 - d4 * d4 - x3 * x3 - y_3 * y_3 + x4 * x4 + y_4 * y_4;
+
+    // Resolução linear do sistema de equações
+    float x = (C * E * H + F * H * B + I * D * B - F * D * H - C * G * B - I * E * A) / 
+              (2 * (A * E * H - B * D * H + B * E * G));
+    
+    float y = (C - A * x) / B;
+
+    // Aplicar um filtro básico para ignorar posições anômalas
+    if (!isnan(x) && !isnan(y) && abs(x) < 20 && abs(y) < 20) {
+        String message = "x: " + String(x) + ", y: " + String(y);
+        Serial.print("Posição calculada: ");
+        Serial.println(message);
+        
+        // Publica a posição no MQTT
+        client.publish(topic, message.c_str());
+    }
+}
+
+// Função para calcular a média dos últimos valores de RSSI
+int averageRssi(int* rssiBuffer) {
+    int sum = 0;
+    for (int i = 0; i < smoothingFactor; i++) {
+        sum += rssiBuffer[i];
+    }
+    return sum / smoothingFactor;
+}
+
+// Conecta ao WiFi
+void connectWiFi() {
+    Serial.print("Conectando ao WiFi");
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.print(".");
+    }
+    Serial.println("Conectado ao WiFi");
+}
+
+// Conecta ao broker MQTT
+void connectMQTT() {
+    while (!client.connected()) {
+        Serial.print("Conectando ao MQTT...");
+        if (client.connect("ESP32Client1")) {
+            Serial.println("conectado!");
+        } else {
+            Serial.print("Falha na conexão, rc=");
+            Serial.println(client.state());
+            delay(2000);
+        }
+    }
+}
+
+// Configuração inicial do ESP32
+void setup() {
+    Serial.begin(115200);
+    connectWiFi();
+    client.setServer(mqttServer, mqttPort);
+}
+
+// Loop principal que será executado repetidamente
+void loop() {
+    if (!client.connected()) {
+        connectMQTT();
+    }
+    client.loop();
+
+    int n = WiFi.scanNetworks();
+    
+    int rssi1 = -999, rssi2 = -999, rssi3 = -999, rssi4 = -999;
+    
+    for (int i = 0; i < n; ++i) {
+        int rssi = WiFi.RSSI(i);
+        
+        if (rssi > rssi1) {
+            rssi4 = rssi3;
+            rssi3 = rssi2;
+            rssi2 = rssi1;
+            rssi1 = rssi;
+        } else if (rssi > rssi2) {
+            rssi4 = rssi3;
+            rssi3 = rssi2;
+            rssi2 = rssi;
+        } else if (rssi > rssi3) {
+            rssi4 = rssi3;
+            rssi3 = rssi;
+        } else if (rssi > rssi4) {
+            rssi4 = rssi;
+        }
+    }
+
+    // Adiciona os valores ao buffer de suavização
+    rssiBuffer1[bufferIndex] = rssi1;
+    rssiBuffer2[bufferIndex] = rssi2;
+    rssiBuffer3[bufferIndex] = rssi3;
+    rssiBuffer4[bufferIndex] = rssi4;
+    bufferIndex = (bufferIndex + 1) % smoothingFactor;
+
+    // Calcula as médias suavizadas
+    int avgRssi1 = averageRssi(rssiBuffer1);
+    int avgRssi2 = averageRssi(rssiBuffer2);
+    int avgRssi3 = averageRssi(rssiBuffer3);
+    int avgRssi4 = averageRssi(rssiBuffer4);
+
+    // Converte os RSSI coletados em distâncias
+    float d1 = calcDistance(avgRssi1);
+    float d2 = calcDistance(avgRssi2);
+    float d3 = calcDistance(avgRssi3);
+    float d4 = calcDistance(avgRssi4);
+
+    // Chama a função de trilateração com quatro distâncias
+    trilateration(d1, d2, d3, d4);
+
+    delay(5000); 
+}
