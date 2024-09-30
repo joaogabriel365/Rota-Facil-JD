@@ -1,1 +1,101 @@
-
+[
+    {
+        "id": "8e93431db521a37c",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1df38c4064ca6d7f",
+        "type": "mqtt in",
+        "z": "8e93431db521a37c",
+        "name": "",
+        "topic": "carrinho/posicao",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "2c8c0ae2af781064"
+            ]
+        ]
+    },
+    {
+        "id": "2c8c0ae2af781064",
+        "type": "function",
+        "z": "8e93431db521a37c",
+        "name": "Armazenar posição globalmente",
+        "func": "let payload = msg.payload;\n\n// Divide a mensagem 'x: valor, y: valor' recebida em duas variáveis\nlet parts = payload.split(', ');\nlet x = parseFloat(parts[0].split(': ')[1]);\nlet y = parseFloat(parts[1].split(': ')[1]);\n\n// Armazena as coordenadas em uma variável global\nglobal.set('cartPosition', {x: x, y: y});\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 430,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0de1d12ff0bd3f5b",
+        "type": "http in",
+        "z": "8e93431db521a37c",
+        "name": "",
+        "url": "/api/cart-position",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 360,
+        "wires": [
+            [
+                "ce2f2103ceac9f90"
+            ]
+        ]
+    },
+    {
+        "id": "ce2f2103ceac9f90",
+        "type": "function",
+        "z": "8e93431db521a37c",
+        "name": "Recuperar posição",
+        "func": "// Recupera a posição do carrinho\nlet position = global.get('cartPosition') || {x: 0, y: 0};  // Valor padrão\nmsg.payload = position;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 430,
+        "y": 360,
+        "wires": [
+            [
+                "beebf1c938e165e6"
+            ]
+        ]
+    },
+    {
+        "id": "beebf1c938e165e6",
+        "type": "http response",
+        "z": "8e93431db521a37c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 680,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b63542be9150d526",
+        "type": "aedes broker",
+        "z": "8e93431db521a37c",
+        "name": "",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+... (61 linhas)
