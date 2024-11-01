@@ -65,7 +65,7 @@ Essas coordenadas são enviadas a um broker via protocolo MQTT, que é eficiente
 <p>Entretanto, enfrentamos dificuldades significativas ao tentar transmitir os dados do protocolo MQTT para o site, o que nos impediu de concluir essa parte do projeto. A variabilidade nos dados coletados pode indicar áreas onde a configuração do sistema pode ser aprimorada. Essas evidências são fundamentais para a avaliação do desempenho do sistema, permitindo à equipe visualizar e compreender melhor a eficácia da triangulação de sinal WiFi e identificar oportunidades de otimização no projeto.
 
 #### Aqui está um vídeo que apresenta os resultados obtidos e o progresso do desenvolvimento do projeto:
-
+https://www.youtube.com/watch?v=SdMyg7towDU
 
 ### Discussão dos resultados: 
 
