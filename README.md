@@ -65,4 +65,9 @@ A segunda ferramenta escolhida é a de monitoramento de consumo de energia, que 
 
 ![image](https://github.com/user-attachments/assets/9c8f596a-844d-4023-8d89-282b4e76d49a)
 
+### Discussão dos resultados: 
+
+Na discussão dos resultados, apesar dos desafios enfrentados, ficamos satisfeitos com algumas observações preliminares que conseguimos registrar. Embora o sistema de triangulação WiFi com o ESP32 não tenha funcionado completamente conforme esperado, os testes iniciais revelaram potenciais na captação de sinal e na estimativa de localização. Isso demonstra que, com os ajustes adequados, a solução proposta tem um caminho promissor a seguir.
+
+Gostamos de perceber que, mesmo nas condições adversas, as ferramentas de teste mostraram-se úteis para identificar as limitações atuais do sistema. As variações nos dados coletados forneceram insights valiosos sobre as interferências de sinal e as áreas onde o projeto precisa ser aprimorado. Portanto, acreditamos que, com os devidos ajustes e um foco na resolução dos problemas identificados, o projeto pode evoluir para uma solução viável e eficiente para o rastreamento de ativos.
 
