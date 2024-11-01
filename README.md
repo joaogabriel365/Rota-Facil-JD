@@ -70,7 +70,7 @@ https://github.com/user-attachments/assets/31372307-8005-43ac-9399-ff617bc87ad0
 #### Desenvolvimento no NodeRed:
 https://github.com/user-attachments/assets/fd038469-02d8-43be-bf31-f082f6e9f7cd
 
-#### Aqui está um vídeo que apresenta os resultados obtidos e o progresso do desenvolvimento do projeto:
+##### No vídeo abaixo, apresentamos uma explicação detalhada sobre como utilizamos essas plataformas e como o site principal funcionará:
 https://www.youtube.com/watch?v=SdMyg7towDU
 
 ### Discussão dos resultados: 
