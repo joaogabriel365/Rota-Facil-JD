@@ -72,7 +72,7 @@ Segue abaixo um video demonstrativo do site desenvolvido:
 
 ### Soluções Futuras
 
-   Para o futuro do projeto, propomos melhorias que visam otimizar os testes e aumentar a precisão do sistema. Primeiramente, ajustes nas configurações do ESP32 são essenciais, como a calibração dos parâmetros de triangulação e a sensibilidade do sinal, além de realizar testes em ambientes variados para identificar e minimizar interferências.
-   A implementação de ferramentas de teste mais avançadas, como software de simulação, pode facilitar a identificação de problemas antes dos testes práticos, economizando tempo e recursos. Também sugerimos reestruturar o método de teste para incluir monitoramento contínuo, o que proporciona uma análise mais robusta da performance sob diferentes condições.
-   Além disso, a incorporação de sensores adicionais, como acelerômetros, pode complementar as informações obtidas pelos sinais WiFi, melhorando a precisão da localização. Essas ações têm o potencial de tornar o sistema de rastreamento mais eficiente, confiável e com menor consumo de energia a longo prazo.
+<p>Para o futuro do projeto, propomos melhorias que visam otimizar os testes e aumentar a precisão do sistema. Primeiramente, ajustes nas configurações do ESP32 são essenciais, como a calibração dos parâmetros de triangulação e a sensibilidade do sinal, além de realizar testes em ambientes variados para identificar e minimizar interferências.
+<p>A implementação de ferramentas de teste mais avançadas, como software de simulação, pode facilitar a identificação de problemas antes dos testes práticos, economizando tempo e recursos. Também sugerimos reestruturar o método de teste para incluir monitoramento contínuo, o que proporciona uma análise mais robusta da performance sob diferentes condições.
+<p>Além disso, a incorporação de sensores adicionais, como acelerômetros, pode complementar as informações obtidas pelos sinais WiFi, melhorando a precisão da localização. Essas ações têm o potencial de tornar o sistema de rastreamento mais eficiente, confiável e com menor consumo de energia a longo prazo.
 
