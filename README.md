@@ -56,6 +56,13 @@ Segue abaixo um video demonstrativo do site desenvolvido:
 
 # Testes de Desempenho
 
+### Definição da Ferramenta de Teste:
+Para o projeto de localização de ativos usando triangulação de sinal WiFi com o ESP32, utilizamos duas ferramentas principais para garantir precisão e eficiência dos testes. A primeira é a ferramenta de mapeamento de localização WiFi, que tem como propósito medir a intensidade do sinal (RSSI) em pontos específicos dentro da área de teste, permitindo determinar a posição relativa do dispositivo. Com essa ferramenta, conseguimos mapear a área com precisão e observar a variação do sinal conforme o dispositivo se movimenta. Ela coleta dados de múltiplos pontos de acesso em cada localização, medindo o RSSI para configurar o ESP32 e registrar sinais de diversas redes, além de oferecer uma interface que permite visualizar e comparar a localização estimada com a real. A precisão é aprimorada ao utilizar uma média de leituras em diferentes pontos, o que reduz as variações no sinal causadas por interferências.
 
+A segunda ferramenta escolhida é a de monitoramento de consumo de energia, que avalia a sustentabilidade do dispositivo enquanto realiza rastreamento e triangulação de localização. Com essa ferramenta, conectamos o ESP32 a um multímetro digital que registra o consumo de energia em tempo real, incluindo picos e quedas de consumo. Essa análise contínua permite observar o impacto das operações de triangulação sobre o consumo energético, identificando os momentos de maior demanda e sugerindo ajustes para melhorar a eficiência. Ambas as ferramentas são essenciais para capturar e analisar dados de precisão e consumo em tempo real, fornecendo uma visão completa e detalhada sobre o desempenho do projeto.
+
+#### Exemplo do layout da fábrica:
+
+![image](https://github.com/user-attachments/assets/9c8f596a-844d-4023-8d89-282b4e76d49a)
 
 
