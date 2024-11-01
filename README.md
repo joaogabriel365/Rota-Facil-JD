@@ -59,12 +59,20 @@ Essas coordenadas são enviadas a um broker via protocolo MQTT, que é eficiente
 
 ![image](https://github.com/user-attachments/assets/9c8f596a-844d-4023-8d89-282b4e76d49a)
 
+### Evidências de Testes:
+
+<p>Capturamos a intensidade do sinal (RSSI) e a estimativa de localização do ESP32 em diferentes pontos, evidenciando a variação entre a posição prevista e a real. Os dados mostram um mapa com os pontos de acesso WiFi e as coordenadas registradas, destacando o erro médio em metros. Essa análise é crucial para entender como a precisão é afetada pela localização do dispositivo em relação aos pontos de acesso.
+<p>Entretanto, enfrentamos dificuldades significativas ao tentar transmitir os dados do protocolo MQTT para o site, o que nos impediu de concluir essa parte do projeto. A variabilidade nos dados coletados pode indicar áreas onde a configuração do sistema pode ser aprimorada. Essas evidências são fundamentais para a avaliação do desempenho do sistema, permitindo à equipe visualizar e compreender melhor a eficácia da triangulação de sinal WiFi e identificar oportunidades de otimização no projeto.
+
+#### Aqui está um vídeo que apresenta os resultados obtidos e o progresso do desenvolvimento do projeto:
+
+
 ### Discussão dos resultados: 
 
 <p>Na discussão dos resultados, apesar dos desafios enfrentados, ficamos satisfeitos com algumas observações preliminares que conseguimos registrar. Embora o sistema de triangulação WiFi com o ESP32 não tenha funcionado completamente conforme esperado, os testes iniciais revelaram potenciais na captação de sinal e na estimativa de localização. Isso demonstra que, com os ajustes adequados, a solução proposta tem um caminho promissor a seguir.
 <p>Gostamos de perceber que, mesmo nas condições adversas, as ferramentas de teste mostraram-se úteis para identificar as limitações atuais do sistema. As variações nos dados coletados forneceram insights valiosos sobre as interferências de sinal e as áreas onde o projeto precisa ser aprimorado. Portanto, acreditamos que, com os devidos ajustes e um foco na resolução dos problemas identificados, o projeto pode evoluir para uma solução viável e eficiente para o rastreamento de ativos.
 
-### Soluções Futuras
+### Soluções Futuras:
 
 <p>Para o futuro do projeto, propomos melhorias que visam otimizar os testes e aumentar a precisão do sistema. Primeiramente, ajustes nas configurações do ESP32 são essenciais, como a calibração dos parâmetros de triangulação e a sensibilidade do sinal, além de realizar testes em ambientes variados para identificar e minimizar interferências.
 <p>A implementação de ferramentas de teste mais avançadas, como software de simulação, pode facilitar a identificação de problemas antes dos testes práticos, economizando tempo e recursos. Também sugerimos reestruturar o método de teste para incluir monitoramento contínuo, o que proporciona uma análise mais robusta da performance sob diferentes condições.
