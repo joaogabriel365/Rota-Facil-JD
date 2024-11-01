@@ -64,8 +64,11 @@ Essas coordenadas são enviadas a um broker via protocolo MQTT, que é eficiente
 <p>Capturamos a intensidade do sinal (RSSI) e a estimativa de localização do ESP32 em diferentes pontos, evidenciando a variação entre a posição prevista e a real. Os dados mostram um mapa com os pontos de acesso WiFi e as coordenadas registradas, destacando o erro médio em metros. Essa análise é crucial para entender como a precisão é afetada pela localização do dispositivo em relação aos pontos de acesso.
 <p>Entretanto, enfrentamos dificuldades significativas ao tentar transmitir os dados do protocolo MQTT para o site, o que nos impediu de concluir essa parte do projeto. A variabilidade nos dados coletados pode indicar áreas onde a configuração do sistema pode ser aprimorada. Essas evidências são fundamentais para a avaliação do desempenho do sistema, permitindo à equipe visualizar e compreender melhor a eficácia da triangulação de sinal WiFi e identificar oportunidades de otimização no projeto.
 
-### Código desenvolvido no Arduino IDE
+#### Código desenvolvido no Arduino IDE:
 https://github.com/user-attachments/assets/31372307-8005-43ac-9399-ff617bc87ad0
+
+#### Desenvolvimento no NodeRed:
+https://github.com/user-attachments/assets/fd038469-02d8-43be-bf31-f082f6e9f7cd
 
 #### Aqui está um vídeo que apresenta os resultados obtidos e o progresso do desenvolvimento do projeto:
 https://www.youtube.com/watch?v=SdMyg7towDU
